@@ -31,5 +31,7 @@ function setup() {
     
     fill('#f66')
     ellipse(spacing, LIT_pointHeight, 8, 8)
+    
+  print("yo")
   }
 }
