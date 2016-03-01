@@ -14,24 +14,36 @@
 function setup() {
   createCanvas(1000,900)
   noStroke()
-  var spacing=30
+  var spacing=75
 
   for (entry in IQ_DATA.data) {
-    var IQ_pointHeight=height-(IQ_DATA.data[entry]*1.5+250);
+    var IQ_pointHeight=height-(IQ_DATA.data[entry]*1.5+260);
     spacing+=11
     
     fill('#66f')
     ellipse(spacing, IQ_pointHeight, 8, 8)
   }
  
-  var spacing=0
+  var spacing=75
   for (entry in LIT_DATA.data) {
-    var LIT_pointHeight=height-(LIT_DATA.data[entry]*1.5+450);
+    var LIT_pointHeight=height-(LIT_DATA.data[entry]*1.5+440);
     spacing+=11
     
     fill('#f66')
     ellipse(spacing, LIT_pointHeight, 8, 8)
-    
-  print("yo")
   }
+}
+
+function draw(){
+  textSize(24)
+  fill('#777')
+  text("Do countries with low literacy rates also show disproportionately low IQ averages?",75,90,500,200)
+  
+  textSize(17)
+  fill('#66f')
+  text("IQ Level",90,175,500,200)
+  ellipse(75,185,8,8)
+  fill('#f66')
+  text("Literacy Rate",90,200,500,200)
+  ellipse(75,210,8,8)
 }
