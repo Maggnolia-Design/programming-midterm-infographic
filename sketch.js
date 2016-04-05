@@ -17,6 +17,10 @@
 
 
 //A function that sorts literacy rates from low to high
+
+//http://p5js.org/reference/#/p5/sort
+//http://stackoverflow.com/questions/3423394/algorithm-of-javascript-sort-function
+
 //var sort)
 // sort=function(){
 //   for(entry1 in LIT_DATA_OG.data){
@@ -74,26 +78,36 @@ function preload() {
 
 //Turning data into images
 function setup() {
-  createCanvas(2000,850)
+  createCanvas(2300,850)
   noStroke()
   background(28,28,28)
   
-  var spacing=80
+  //blue bars
+  var spacing=93
   for (each in IQ_DATA) {
     var IQ_barLength=IQ_DATA[each]*1.5+60;
-    spacing+=35
+    spacing+=40
     
     fill('#66f')
-    rect(13+spacing, (height-100)-IQ_barLength, 13, IQ_barLength)
+    rect(spacing, (height-100)-IQ_barLength, 15.2, IQ_barLength)
   }
  
+  //red bars 
   var spacing=80
   for (each in LIT_DATA) {
     var LIT_barLength=(LIT_DATA[each]*1.5+240);
-    spacing+=35
+    spacing+=40
     
     fill('#f66')
-    rect(spacing, (height-100)-LIT_barLength, 13, LIT_barLength)
+    rect(spacing, (height-100)-LIT_barLength, 15.2, LIT_barLength)
+  }
+
+  //labels
+  var spacing=80
+  for (var i=0; i<LIT_DATA.length; i++) {
+    spacing+=40
+    fill('#999')
+    rect(spacing,753, 28, 28)
   }
 
 //TITLE
@@ -103,11 +117,20 @@ function setup() {
   textFont(fontHeader)
   text("DISPARATE REPRESENTATION",100,85,600,200)
   
+//LABELS
+  fill(28,28,28)
+  textSize(17)
+  text("BE / FR / BG / DK / BB /\tHR / ET / DE / JP / HU /", 125,753,1000,200)
+  text("HK / BR / GN \t FI /\tFJ / GR / NL \tNG /CO",520,753,1000,200)
+  text("/ NZ / NP / EG / GT\tCN",867,753,1000,200)
+  text("/ GQ / IQ / CA /\tIR /\tIT /\tEC/ CD / CZ / AR \tAU / IL /\tIN /\tLB /\tIE /\tID / CU / GH",1067,753,1000,200)
+  text("/ MA/ KE / JM / MN/ MH/ KR / MY / MX / AT",1750,753,1000,200)
+  
+//SUBTITLE
   fill('#444')
   textSize(100)
   text("[                ]",680,60,800,200)
-  
-//SUBTITLE
+
   fill('#555')
   textSize(26)
   textFont(fontBody)
@@ -116,16 +139,11 @@ function setup() {
 //KEY
   textSize(17)
   fill('#66f')
-  text("IQ Level",95,250,500,200)
-  rect(75,260,10,8)
+  text("IQ Level",760,250,500,200)
+  rect(740,260,10,8)
   fill('#f66')
-  text("Literacy Rate",95,275,500,200)
-  rect(75,285,10,8)
-  
-//LABELS
-  text(
-  "BE FR BG DK BB HR ET DE JP HU HK BR GN FI FJ GR NL NG NZ NP EG GT CO CN GQ IQ CA IR IT EC CD CZ AR AU IL IN LB IE ID CU GH MA KE JM MN MH KR MY MX AT",
-  115,750,2000,200)
+  text("Literacy Rate",760,225,500,200)
+  rect(740,235,10,8)
 
   
 //GRAPH
