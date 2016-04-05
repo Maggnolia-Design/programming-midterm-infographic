@@ -13,23 +13,33 @@
 
   IQ_DATA = [] 
   LIT_DATA =[]
-  
+  COUNTRIES = []
+
+//A function that looks for pairs of strings...
+//then puts the corresponding data into a 3 arrays...
+//one for IQ values, one for literacy calues, one for country names
+
 var compare
 
 compare=function(){
   for (entry1 in IQ_DATA_OG.data){
     for(entry2 in LIT_DATA_OG.data){
-      if(IQ_DATA_OG.data[entry1]==LIT_DATA_OG.data[entry2]){
-        IQ_DATA.push(entry1)
-        LIT_DATA.push(IQ_DATA_OG.data[entry1])
+      if(entry1==entry2){
+        IQ_DATA.push(IQ_DATA_OG.data[entry1])
+        LIT_DATA.push(LIT_DATA_OG.data[entry2])
+        COUNTRIES.push(entry1)
+        break
       }
-      console.log(IQ_DATA_OG.data[entry1])
     }
   }
   
 }
 compare()
 console.log(IQ_DATA)
+console.log(LIT_DATA)
+console.log(COUNTRIES)
+
+//Turning data into points
 function setup() {
   createCanvas(1100,700)
   noStroke()
