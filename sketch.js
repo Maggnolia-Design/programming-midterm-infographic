@@ -15,6 +15,59 @@
   LIT_DATA =[]
   COUNTRIES = []
 
+  COUNTRY_CODES=[
+  "Belgium",
+  "France",
+  "Bulgaria",
+  "Denmark",
+  "Barbados",
+  "Croatia",
+  "Ethiopia",
+  "Germany",
+  "Japan",
+  "Hungary",
+  "Hong Kong",
+  "Brazil",
+  "Guinea",
+  "Finland",
+  "Fiji",
+  "Greece",
+  "Netherlands",
+  "Nigeria",
+  "New Zealand",
+  "Nepal",
+  "Egypt",
+  "Guatemala",
+  "Colombia",
+  "China",
+  "Equatorial Guinea",
+  "Iraq",
+  "Canada",
+  "Iran",
+  "Italy",
+  "Ecuador",
+  "Democratic Republic of the Congo",
+  "Czech Republic",
+  "Argentina",
+  "Australia",
+  "Israel",
+  "India",
+  "Lebanon",
+  "Republic of Ireland",
+  "Indonesia",
+  "Cuba",
+  "Ghana",
+  "Morocco",
+  "Kenya",
+  "Jamaica",
+  "Mongolia",
+  "Marshall Islands",
+  "South Korea",
+  "Malaysia",
+  "Mexico",
+  "Austria"
+]
+  
 
 //A function that sorts literacy rates from low to high
 
@@ -176,13 +229,12 @@ function draw() {
     hit=collidePointRect(mouseX,mouseY,spacing,753, 28, 28)
     if (hit){
       fill('#aaa')
-      text(COUNTRIES[i] + ": " + LIT_DATA[i] + " Literacy; " + IQ_DATA[i] + " IQ",spacing,810)
-      //COUNTRIES[i]
-      // noLoop()
+      text(COUNTRY_CODES[i] + ": " + " Literacy rate of " + LIT_DATA[i] + "; IQ level of " + IQ_DATA[i],spacing,810)
     }
-    // loop()
   }
 }
+
+console.log(COUNTRIES)
   
 
 
