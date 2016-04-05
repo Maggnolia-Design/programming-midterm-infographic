@@ -15,17 +15,27 @@
   LIT_DATA =[]
   COUNTRIES = []
 
+
 //A function that sorts literacy rates from low to high
-
-//var sort
-//sort=function(){
-//  for(entry1 in LIT_DATA_OG.data){
-//    for(entry2 in LIT_DATA_OG.data){
-//      if(IQ_DATA_OG.data[entry1]<=IQ_DATA_OG.data[entry2]){
-//    }
-//  }
-//}
-
+//var sort)
+// sort=function(){
+//   for(entry1 in LIT_DATA_OG.data){
+//     for(entry2 in LIT_DATA_OG.data){
+//       if(LIT_DATA_OG.data[entry2]<=LIT_DATA_OG.data[entry1]){
+//         temp = entry1
+//         entry1 = entry2
+//         entry2 = temp
+        
+//         temp = LIT_DATA_OG.data[entry1]
+//         LIT_DATA_OG.data[entry1] = LIT_DATA_OG.data[entry2]
+//         LIT_DATA_OG.data[entry2] = temp
+//       }
+//     }
+//      console.log(entry1)
+//   }
+// }
+// sort(LIT_DATA_OG.data)
+//console.log(LIT_DATA_OG.data)
 
 
 //A function that looks for pairs of strings...
@@ -45,15 +55,17 @@ compare=function(){
       }
     }
   }
-  
 }
+
 compare()
-console.log(IQ_DATA)
-console.log(LIT_DATA)
-console.log(COUNTRIES)
+//console.log(IQ_DATA)
+// console.log(LIT_DATA)
+// console.log(COUNTRIES)
 
 //Loading typefaces
+
 var fontHeader, fontBody
+
 function preload() {
    fontHeader = loadFont("fonts/Quicksand-Regular.ttf");
    fontBody = loadFont("fonts/EBGaramond-Regular.ttf");
