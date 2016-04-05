@@ -157,16 +157,16 @@ function draw() {
     rect(spacing,753, 28, 28)
   }
   
-  //collision with labels
-  var spacing=90
-  for (var i=0; i<LIT_DATA.length; i++) {
+//collision with labels
+  
+  hit=collidePointRect(mouseX,mouseY,130,753, 28, 28)
+  if (hit){
+    var spacing=90
+    for (var i=0; i<LIT_DATA.length; i++) {
     spacing+=40
   }
-  
-  rectMode(CORNER)
-  hit=collidePointRect(mouseX,mouseY,spacing,753, 28, 28)
-  if (hit){
-    text(("Belgium: 100.0 Literacy; 99.0 IQ"+hit),mouseX,mouseY)
+    
+    text("Belgium: 100.0 Literacy; 99.0 IQ",mouseX,mouseY)
     fill('red')
 //  }else {
 //    text("hi",mouseX,mouseY)
