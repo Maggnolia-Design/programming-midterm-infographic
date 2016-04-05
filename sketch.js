@@ -146,9 +146,7 @@ function setup() {
 //  noFill()
 //  stroke('#555')
 //  rect(70,250,950,400)
-}
 
-function draw() {
   //labels
   var spacing=90
   for (var i=0; i<LIT_DATA.length; i++) {
@@ -156,22 +154,7 @@ function draw() {
     fill('#999')
     rect(spacing,753, 28, 28)
   }
-  
-//collision with labels
-  
-  hit=collidePointRect(mouseX,mouseY,130,753, 28, 28)
-  if (hit){
-    var spacing=90
-    for (var i=0; i<LIT_DATA.length; i++) {
-    spacing+=40
-  }
-    
-    text("Belgium: 100.0 Literacy; 99.0 IQ",mouseX,mouseY)
-    fill('red')
-//  }else {
-//    text("hi",mouseX,mouseY)
-  }
-  
+
   //LABELS
   fill(28,28,28)
   textFont(fontHeader)
@@ -181,7 +164,25 @@ function draw() {
   text("/ NZ / NP / EG / GT\tCN",877,753,1000,200)
   text("/ GQ / IQ / CA /\tIR /\tIT /\tEC/ CD / CZ / AR \tAU /\tIL /\tIN /\tLB /\tIE /\tID / CU /GH",1077,753,1000,200)
   text("/ MA\t KE / JM /MN \tMH/ KR / MY \tMX / AT",1760,753,1000,200)
-  
+
 }
+
+function draw() {
+  var spacing=90
+//collision with labels
+  setup()
+  for (var i=0; i<LIT_DATA.length; i++) {
+    spacing+=40
+    hit=collidePointRect(mouseX,mouseY,spacing,753, 28, 28)
+    if (hit){
+      fill('#aaa')
+      text(COUNTRIES[i] + ": " + LIT_DATA[i] + " Literacy; " + IQ_DATA[i] + " IQ",spacing,810)
+      //COUNTRIES[i]
+      // noLoop()
+    }
+    // loop()
+  }
+}
+  
 
 
