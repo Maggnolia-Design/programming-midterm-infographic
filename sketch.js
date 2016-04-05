@@ -46,6 +46,7 @@
 //then puts the corresponding data into a 3 arrays...
 //one for IQ values, one for literacy calues, one for country names
 
+var hit = false;
 var compare
 
 compare=function(){
@@ -102,21 +103,6 @@ function setup() {
     rect(spacing, (height-132)-LIT_barLength, 15.2, LIT_barLength)
   }
 
-  //labels
-  var spacing=90
-  for (var i=0; i<LIT_DATA.length; i++) {
-    spacing+=40
-    fill('#999')
-    rect(spacing,753, 28, 28)
-  
-    //collision
-    var hit=collidePointRect(mouseX,mouseY,30,spacing,753,28)
-    if(hit){
-      
-      print("Belgium: 100.0 Literacy; 99.0 IQ")
-    }
-  }
-
   
   //LINES
   fill('rgba(70%,70%,100%,0.5)')
@@ -134,15 +120,7 @@ function setup() {
   fill('#999')
   textFont(fontHeader)
   text("DISPARATE REPRESENTATION",110,85,600,200)
-  
-  //LABELS
-  fill(28,28,28)
-  textSize(17)
-  text("BE / FR / BG / DK / BB / HR / ET /\tDE / JP / HU /", 135,753,1000,200)
-  text("HK / BR \tGN \t FI /\tFJ / GR / NL \tNG /CO",532,753,1000,200)
-  text("/ NZ / NP / EG / GT\tCN",877,753,1000,200)
-  text("/ GQ / IQ / CA /\tIR /\tIT /\tEC/ CD / CZ / AR \tAU /\tIL /\tIN /\tLB /\tIE /\tID / CU /GH",1077,753,1000,200)
-  text("/ MA\t KE / JM /MN \tMH/ KR / MY \tMX / AT",1760,753,1000,200)
+
   
   //SUBTITLE
   fill('#444')
@@ -169,3 +147,41 @@ function setup() {
 //  stroke('#555')
 //  rect(70,250,950,400)
 }
+
+function draw() {
+  //labels
+  var spacing=90
+  for (var i=0; i<LIT_DATA.length; i++) {
+    spacing+=40
+    fill('#999')
+    rect(spacing,753, 28, 28)
+  }
+  
+  //collision with labels
+  var spacing=90
+  for (var i=0; i<LIT_DATA.length; i++) {
+    spacing+=40
+  }
+  
+  rectMode(CORNER)
+  hit=collidePointRect(mouseX,mouseY,spacing,753, 28, 28)
+  if (hit){
+    text(("Belgium: 100.0 Literacy; 99.0 IQ"+hit),mouseX,mouseY)
+    fill('red')
+//  }else {
+//    text("hi",mouseX,mouseY)
+  }
+  
+  //LABELS
+  fill(28,28,28)
+  textFont(fontHeader)
+  textSize(17)
+  text("BE / FR / BG / DK / BB / HR / ET /\tDE / JP / HU /", 135,753,1000,200)
+  text("HK / BR \tGN \t FI /\tFJ / GR / NL \tNG /CO",532,753,1000,200)
+  text("/ NZ / NP / EG / GT\tCN",877,753,1000,200)
+  text("/ GQ / IQ / CA /\tIR /\tIT /\tEC/ CD / CZ / AR \tAU /\tIL /\tIN /\tLB /\tIE /\tID / CU /GH",1077,753,1000,200)
+  text("/ MA\t KE / JM /MN \tMH/ KR / MY \tMX / AT",1760,753,1000,200)
+  
+}
+
+
