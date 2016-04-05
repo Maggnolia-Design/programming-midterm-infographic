@@ -108,8 +108,15 @@ function setup() {
     spacing+=40
     fill('#999')
     rect(spacing,753, 28, 28)
-
+  
+    //collision
+    var hit=collidePointRect(mouseX,mouseY,30,spacing,753,28)
+    if(hit){
+      
+      print("Belgium: 100.0 Literacy; 99.0 IQ")
+    }
   }
+
   
   //LINES
   fill('rgba(70%,70%,100%,0.5)')
