@@ -39,14 +39,14 @@ console.log(IQ_DATA)
 console.log(LIT_DATA)
 console.log(COUNTRIES)
 
-//Turning data into points
+//Turning data into images
 function setup() {
   createCanvas(1100,700)
   noStroke()
   
   var spacing=80
-  for (entry in IQ_DATA.data) {
-    var IQ_pointHeight=height-(IQ_DATA.data[entry]*1.5+60);
+  for (each in IQ_DATA) {
+    var IQ_pointHeight=height-(IQ_DATA[each]*1.5+60);
     spacing+=20
     
     fill('#66f')
@@ -54,8 +54,8 @@ function setup() {
   }
  
   var spacing=80
-  for (entry in LIT_DATA.data) {
-    var LIT_pointHeight=height-(LIT_DATA.data[entry]*1.5+240);
+  for (each in LIT_DATA) {
+    var LIT_pointHeight=height-(LIT_DATA[each]*1.5+240);
     spacing+=20
     
     fill('#f66')
