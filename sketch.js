@@ -109,34 +109,35 @@ function setup() {
     fill('#999')
     rect(spacing,753, 28, 28)
   }
+  
 
-//TITLE
+  //TITLE
   noStroke()
   textSize(55)
-  fill('#777')
+  fill('#999')
   textFont(fontHeader)
   text("DISPARATE REPRESENTATION",100,85,600,200)
   
-//LABELS
+  //LABELS
   fill(28,28,28)
   textSize(17)
-  text("BE / FR / BG / DK / BB /\tHR / ET / DE / JP / HU /", 125,753,1000,200)
-  text("HK / BR / GN \t FI /\tFJ / GR / NL \tNG /CO",520,753,1000,200)
+  text("BE / FR / BG / DK / BB / HR / ET /\tDE / JP / HU /", 125,753,1000,200)
+  text("HK / BR \tGN \t FI /\tFJ / GR / NL \tNG /CO",522,753,1000,200)
   text("/ NZ / NP / EG / GT\tCN",867,753,1000,200)
-  text("/ GQ / IQ / CA /\tIR /\tIT /\tEC/ CD / CZ / AR \tAU / IL /\tIN /\tLB /\tIE /\tID / CU / GH",1067,753,1000,200)
-  text("/ MA/ KE / JM / MN/ MH/ KR / MY / MX / AT",1750,753,1000,200)
+  text("/ GQ / IQ / CA /\tIR /\tIT /\tEC/ CD / CZ / AR \tAU /\tIL /\tIN /\tLB /\tIE /\tID / CU /GH",1067,753,1000,200)
+  text("/ MA\t KE / JM /MN \tMH/ KR / MY \tMX / AT",1750,753,1000,200)
   
-//SUBTITLE
+  //SUBTITLE
   fill('#444')
   textSize(100)
   text("[                ]",680,60,800,200)
 
-  fill('#555')
+  fill('#777')
   textSize(26)
   textFont(fontBody)
   text("Do countries with low literacy rates also show disproportionately low IQ averages?",740,100,600,200)
   
-//KEY
+  //KEY
   textSize(17)
   fill('#66f')
   text("IQ Level",760,250,500,200)
