@@ -15,6 +15,19 @@
   LIT_DATA =[]
   COUNTRIES = []
 
+//A function that sorts literacy rates from low to high
+
+//var sort
+//sort=function(){
+//  for(entry1 in LIT_DATA_OG.data){
+//    for(entry2 in LIT_DATA_OG.data){
+//      if(IQ_DATA_OG.data[entry1]<=IQ_DATA_OG.data[entry2]){
+//    }
+//  }
+//}
+
+
+
 //A function that looks for pairs of strings...
 //then puts the corresponding data into a 3 arrays...
 //one for IQ values, one for literacy calues, one for country names
@@ -39,43 +52,69 @@ console.log(IQ_DATA)
 console.log(LIT_DATA)
 console.log(COUNTRIES)
 
+//Loading typefaces
+var fontHeader, fontBody
+function preload() {
+   fontHeader = loadFont("fonts/Quicksand-Regular.ttf");
+   fontBody = loadFont("fonts/EBGaramond-Regular.ttf");
+}
+
+
 //Turning data into images
 function setup() {
-  createCanvas(1100,700)
+  createCanvas(2000,850)
   noStroke()
+  background(28,28,28)
   
   var spacing=80
   for (each in IQ_DATA) {
-    var IQ_pointHeight=height-(IQ_DATA[each]*1.5+60);
-    spacing+=20
+    var IQ_barLength=IQ_DATA[each]*1.5+60;
+    spacing+=35
     
     fill('#66f')
-    ellipse(spacing, IQ_pointHeight, 13, 13)
+    rect(13+spacing, (height-100)-IQ_barLength, 13, IQ_barLength)
   }
  
   var spacing=80
   for (each in LIT_DATA) {
-    var LIT_pointHeight=height-(LIT_DATA[each]*1.5+240);
-    spacing+=20
+    var LIT_barLength=(LIT_DATA[each]*1.5+240);
+    spacing+=35
     
     fill('#f66')
-    ellipse(spacing, LIT_pointHeight, 13, 13)
+    rect(spacing, (height-100)-LIT_barLength, 13, LIT_barLength)
   }
 
 //TITLE
   noStroke()
-  textSize(26)
+  textSize(55)
+  fill('#777')
+  textFont(fontHeader)
+  text("DISPARATE REPRESENTATION",100,85,600,200)
+  
+  fill('#444')
+  textSize(100)
+  text("[                ]",680,60,800,200)
+  
+//SUBTITLE
   fill('#555')
-  text("Do countries with low literacy rates also show disproportionately low IQ averages?",75,85,600,200)
+  textSize(26)
+  textFont(fontBody)
+  text("Do countries with low literacy rates also show disproportionately low IQ averages?",740,100,600,200)
   
 //KEY
   textSize(17)
   fill('#66f')
-  text("IQ Level",90,180,500,200)
-  ellipse(75,190,8,8)
+  text("IQ Level",95,250,500,200)
+  rect(75,260,10,8)
   fill('#f66')
-  text("Literacy Rate",90,205,500,200)
-  ellipse(75,215,8,8)
+  text("Literacy Rate",95,275,500,200)
+  rect(75,285,10,8)
+  
+//LABELS
+  text(
+  "BE FR BG DK BB HR ET DE JP HU HK BR GN FI FJ GR NL NG NZ NP EG GT CO CN GQ IQ CA IR IT EC CD CZ AR AU IL IN LB IE ID CU GH MA KE JM MN MH KR MY MX AT",
+  115,750,2000,200)
+
   
 //GRAPH
 //  noFill()
