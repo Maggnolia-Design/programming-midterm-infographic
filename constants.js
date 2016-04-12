@@ -99,4 +99,3 @@ var  LIT_DATA_OG = {"data": {"BD": 43.1, "BE": 99.0, "BF": 21.8, "BG": 98.6, "BA
 //one for IQ values, one for literacy calues, one for country names
 
 var hit = false;
-var compare
