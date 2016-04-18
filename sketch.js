@@ -65,11 +65,11 @@ function setup() {
   rect(750,235,10,8)
 
   //labels
-  var spacing=90
+  var SPACING=90
   for (var i=0; i<LIT_DATA.length; i++) {
-    spacing+=40
+    SPACING+=40
     fill('#999')
-    rect(spacing,753, 28, 28)
+    rect(SPACING,753, 28, 28)
   }
 
   //LABELS
@@ -93,36 +93,50 @@ function draw(){
     hit=collidePointRect(mouseX,mouseY,SPACING,753, 28, 28)
     if (hit){
       fill('#aaa')
-      text(COUNTRY_CODES[i] + ": " + " Literacy rate of " + LIT_DATA[i] + "; IQ level of " + IQ_DATA[i],spacing,810)
+      text(COUNTRY_CODES[i] + ": " + " Literacy rate of " + LIT_DATA[i] + "; IQ level of " + IQ_DATA[i],SPACING,810)
     }
   }
   
+  // var temp = new Bars()
+  SPACING = 90
   for(each in IQ_DATA){
     SPACING+=40
-    IQ_DATA.display(IQ_DATA.data[entry])
+    new Bars(SPACING, IQ_DATA[each]*1.5+60).display_IQ()
+    new Bars(SPACING, LIT_DATA[each]*1.5+240).display_LIT()
+    // console.log(SPACING)
+    // temp.display(SPACING, IQ_DATA[each]*1.5+60)
+    // temp.display(SPACING, LIT_DATA[each]*1.5+240)
   }
-  
+  /*
   for(each in LIT_DATA){
     SPACING+=40
-    LIT_DATA.display[each]()
+    temp.display(SPACING, LIT_DATA[each]*1.5+240)
   }
+  */
 }
 
 //Blue and Red Bars
-function Bars(){
+function Bars(x, y){
   noStroke()
-  this.SPACING=90;
+  this.x = x;
+  this.y = y;
+  //this.SPACING=90;
   this.xAxis=height-132
   this.barWidth=15.2
 
-  this.display=function(){
-    var LIT_barLength=(LIT_DATA[each]*1.5+240);
-    fill('#f66')
-    rect(SPACING, xAxis-LIT_barLength, barWidth, LIT_barLength)
+  this.display_IQ=function(){
+    // var LIT_barLength = (LIT_DATA[each]*1.5+240);
+    // fill('#f66')
+    // rect(this.x, this.xAxis-this.y, this.barWidth, this.y)
 
-    var IQ_barLength=IQ_DATA[each]*1.5+60;
+    // var IQ_barLength=IQ_DATA[each]*1.5+60;
     fill('#66f')
-    rect(SPACING+13, xAxis-IQ_barLength, barWidth, IQ_barLength)
+    rect(13+this.x, this.xAxis-this.y, this.barWidth, this.y)
+  }
+  
+  this.display_LIT=function() {
+    fill('#f66')
+    rect(this.x, this.xAxis-this.y, this.barWidth, this.y)
   }
 }
 
